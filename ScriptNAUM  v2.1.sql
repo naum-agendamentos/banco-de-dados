@@ -2,7 +2,7 @@ DROP DATABASE naum;
 
 CREATE DATABASE naum;
 USE naum;
-SELECT  id, foto FROM barbeiro;
+
 CREATE TABLE `usuario` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL,
