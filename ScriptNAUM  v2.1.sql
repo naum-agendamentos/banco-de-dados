@@ -126,6 +126,19 @@ CREATE TABLE `login_adm` (
   CONSTRAINT `FKjvynbplbbg3vo70k2h9rg501m` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`)
 );
 
+CREATE TABLE `mural_avisos` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `barbeiro_id` bigint DEFAULT NULL,
+  `titulo` varchar(255) DEFAULT NULL,
+  `descricao` varchar(500) DEFAULT NULL,
+  `url` varchar(1000) DEFAULT NULL,
+  `data` datetime DEFAULT NULL,
+  `urgencia` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_barbeiro_mural` (`barbeiro_id`),
+  CONSTRAINT `FK_barbeiro_mural` FOREIGN KEY (`barbeiro_id`) REFERENCES `barbeiro` (`id`)
+);
+
 select * from endereco ;
 select * from barbearia ;
 select * from servico ;
