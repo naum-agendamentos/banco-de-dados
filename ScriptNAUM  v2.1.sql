@@ -133,7 +133,7 @@ CREATE TABLE `mural_avisos` (
   `descricao` varchar(500) DEFAULT NULL,
   `url` varchar(1000) DEFAULT NULL,
   `data` datetime DEFAULT NULL,
-  `urgencia` varchar(100) DEFAULT NULL,
+  `tipo_aviso` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_barbeiro_mural` (`barbeiro_id`),
   CONSTRAINT `FK_barbeiro_mural` FOREIGN KEY (`barbeiro_id`) REFERENCES `barbeiro` (`id`)
