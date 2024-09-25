@@ -14,12 +14,12 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `endereco` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `cidade` varchar(45) NOT NULL,
-  `cep` varchar(45) NOT NULL,
-  `numero` varchar(45) NOT NULL,
-  `bairro` varchar(45) NOT NULL,
-  `uf` varchar(45) NOT NULL,
-  `rua` varchar(45) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `cep` varchar(255) NOT NULL,
+  `numero` varchar(255) NOT NULL,
+  `bairro` varchar(255) NOT NULL,
+  `uf` varchar(255) NOT NULL,
+  `rua` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -43,10 +43,10 @@ CREATE TABLE `permissao` (
 
 CREATE TABLE `barbearia` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) DEFAULT NULL,
-  `link_barbearia` varchar(45) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `link_barbearia` varchar(1000) DEFAULT NULL,
   `ativa` tinyint(1) DEFAULT NULL,
-  `foto_barbearia` varchar(45) DEFAULT NULL,
+  `foto_barbearia` varchar(1000) DEFAULT NULL,
   `endereco_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK95fh0pnqn0tgd1baowspc35mp` (`endereco_id`),
