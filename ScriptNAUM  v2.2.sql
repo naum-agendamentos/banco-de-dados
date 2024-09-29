@@ -53,6 +53,18 @@ CREATE TABLE `barbearia` (
   CONSTRAINT `FK95fh0pnqn0tgd1baowspc35mp` FOREIGN KEY (`endereco_id`) REFERENCES `endereco` (`id`)
 );
 
+CREATE TABLE `semana` (
+	`id` bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `segunda` boolean default null,
+    `terca` boolean default null,
+    `quarta` boolean default null,
+    `quinta` boolean default null,
+    `sexta` boolean default null,
+    `sabado` boolean default null,
+    `domingo` boolean default null
+);
+
+
 CREATE TABLE `barbeiro` (
   `barbeiro_ativo` bit(1) NOT NULL,
   `fk_permissao` int DEFAULT NULL,
@@ -65,11 +77,14 @@ CREATE TABLE `barbeiro` (
   `nome` varchar(255) DEFAULT NULL,
   `senha` varchar(255) DEFAULT NULL,
   `telefone` varchar(255) DEFAULT NULL,
+  `fk_dias_semana` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
+  key `constraintdiasdasemana` (`fk_dias_semana`),
   KEY `FK7wpd3f1n8aqj48ii8k8uoq9p6` (`barbearia_id`),
   KEY `FKdlxkvxpw1sb35hh80mhyxa3f0` (`usuario_id`),
   CONSTRAINT `FK7wpd3f1n8aqj48ii8k8uoq9p6` FOREIGN KEY (`barbearia_id`) REFERENCES `barbearia` (`id`),
-  CONSTRAINT `FKdlxkvxpw1sb35hh80mhyxa3f0` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`)
+  CONSTRAINT `FKdlxkvxpw1sb35hh80mhyxa3f0` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
+  CONSTRAINT `constraintdiasdasemana` foreign key (`fk_dias_semana`) REFERENCES `semana` (`id`)
 );
 
 CREATE TABLE `servico` (
