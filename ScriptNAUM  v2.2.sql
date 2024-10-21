@@ -164,22 +164,22 @@ select * from avaliacao ;
 select * from agendamento ;
 select * from usuario ;
 
-INSERT INTO Permissao (descricao) VALUES ('ADM'), ('Padrão');
+INSERT INTO permissao (descricao) VALUES ('ADM'), ('Padrão');
 
-INSERT INTO Usuario (nome, email, senha, tipo) VALUES
+INSERT INTO usuario (nome, email, senha, tipo) VALUES
 ('Guilherme', 'guilherme@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 'BARBEIRO');
 
-INSERT INTO Endereco (cidade, cep, numero, bairro, uf, rua) VALUES ('Cidade 1', '12345678', '123', 'Bairro 1', 'UF1', 'Rua 1');
+INSERT INTO endereco (cidade, cep, numero, bairro, uf, rua) VALUES ('Cidade 1', '12345678', '123', 'Bairro 1', 'UF1', 'Rua 1');
 
-INSERT INTO Barbearia (id, nome, link_barbearia, ativa, foto_barbearia, endereco_id) VALUES (1, 'Barbearia 1', 'link1', TRUE, 'foto1.jpg', 1);
+INSERT INTO barbearia (id, nome, link_barbearia, ativa, foto_barbearia, endereco_id) VALUES (1, 'Barbearia 1', 'link1', TRUE, 'foto1.jpg', 1);
 
-INSERT INTO Barbeiro (nome, email, senha, telefone, descricao, barbeiro_ativo, foto, barbearia_id, fk_permissao, usuario_id) VALUES
+INSERT INTO barbeiro (nome, email, senha, telefone, descricao, barbeiro_ativo, foto, barbearia_id, fk_permissao, usuario_id) VALUES
 ('Guilherme', 'guilherme@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '123456789', 'Descrição do Barbeiro 1', 1, 'foto1.jpg', 1, 1, 1);
 
-INSERT INTO Usuario (nome, email, senha, tipo) VALUES
+INSERT INTO usuario (nome, email, senha, tipo) VALUES
 ('Administrador', 'adm@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 'ADMIN');
 
-INSERT INTO Login_adm (email, senha, usuario_id) VALUES
+INSERT INTO login_adm (email, senha, usuario_id) VALUES
 ('adm@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 2);
 
 select id from servico;
