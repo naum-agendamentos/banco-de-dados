@@ -169,18 +169,27 @@ INSERT INTO permissao (descricao) VALUES ('ADM'), ('Padrão');
 INSERT INTO usuario (nome, email, senha, tipo) VALUES
 ('Guilherme', 'guilherme@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 'BARBEIRO');
 
-INSERT INTO endereco (cidade, cep, numero, bairro, uf, rua) VALUES ('Cidade 1', '12345678', '123', 'Bairro 1', 'UF1', 'Rua 1');
+INSERT INTO endereco (cidade, cep, numero, bairro, uf, rua) VALUES ('São Paulo', '08460348', '331', 'Vila Abc', 'SP', 'R. Castanho da Silva');
 
-INSERT INTO barbearia (id, nome, link_barbearia, ativa, foto_barbearia, endereco_id) VALUES (1, 'Barbearia 1', 'link1', TRUE, 'foto1.jpg', 1);
+INSERT INTO barbearia (id, nome, link_barbearia, ativa, foto_barbearia, endereco_id) VALUES (1, 'Barbearia TM', 'http://localhost:3001', TRUE, 'https://res-console.cloudinary.com/dmgfyyioo/media_explorer_thumbnails/3745a8c61a7eb36c0113035e895e85e6/detailed', 1);
 
 INSERT INTO barbeiro (nome, email, senha, telefone, descricao, barbeiro_ativo, foto, barbearia_id, fk_permissao, usuario_id) VALUES
-('Guilherme', 'guilherme@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '123456789', 'Descrição do Barbeiro 1', 1, 'foto1.jpg', 1, 1, 1);
+('Guilherme', 'guilherme@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '11999999999', 'Barbeiro dono da Barbearia TM', 1, 'https://th.bing.com/th/id/OIG1.0BeicJdeVre_rnigiRM4?w=1024&h=1024&rs=1&pid=ImgDetMain', 1, 1, 1);
 
 INSERT INTO usuario (nome, email, senha, tipo) VALUES
 ('Administrador', 'adm@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 'ADMIN');
 
 INSERT INTO login_adm (email, senha, usuario_id) VALUES
 ('adm@gmail.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 2);
+
+INSERT INTO `servico` (`preco`, `tempo_servico`, `barbearia_id`, `nome_servico`)
+VALUES
+(20.00, 60, 1, 'Luzes'),
+(40.00, 90, 1, 'Platinado'),
+(20.00, 30, 1, 'Barba'),
+(35.00, 90, 1, 'Progressiva'),
+(30.00, 60, 1, 'Pigmentação'),
+(40.00, 60, 1, 'Colometria');
 
 select id from servico;
 select id from usuario;
